@@ -64,6 +64,13 @@ class UsersController extends Controller
     public function show($id)
     {
         //
+        $user = User::findOrFail($id);
+        if($user) {
+            return response()->json(['User' => $user], 200);
+        }
+        else {
+            return response()->json(["Error" => "User with id $id not found"], 400);
+        }
     }
 
     /**

@@ -25,6 +25,9 @@ Route::post('/user/signup', [UsersController::class, 'store']);
 // Retrieve
 Route::get('/users', [UsersController::class, 'index']);
 
+// Retrieve a particular user's data
+Route::get('/user/{id}', [UsersController::class, 'show']);
+
 // Update
 Route::post('/user/{id}/update', [UsersController::class, 'update']);
 
